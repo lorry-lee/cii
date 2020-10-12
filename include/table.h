@@ -21,8 +21,8 @@ extern void   Table_map    (T table,
 	void apply(const void *key, void **value, void *cl),
 	void *cl);
 extern void **Table_toArray(T table, void *end);
-
-
+extern void Table_foreach(T table,
+   void process(const void* value));
 
 #undef T
 

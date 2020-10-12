@@ -2,6 +2,11 @@
 #ifndef EXCEPT_INCLUDED
 #define EXCEPT_INCLUDED
 #include <setjmp.h>
+
+#ifdef __cplusplus
+   extern "C" {
+#endif
+
 #define T Except_T
 typedef struct T {
 	const char *reason;
@@ -26,6 +31,12 @@ extern int Except_index;
 extern void Except_init(void);
 extern void Except_push(Except_Frame *fp);
 extern void Except_pop(void);
+
+#ifdef __cplusplus
+   }
+#endif
+
+
 #endif
 #ifdef WIN32
 /* $Id$ */
@@ -90,3 +101,4 @@ extern void Except_pop(void);
 #endif
 #undef T
 #endif
+
