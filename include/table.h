@@ -22,7 +22,7 @@ extern void   Table_map    (T table,
 	void *cl);
 extern void **Table_toArray(T table, void *end);
 extern void Table_foreach(T table,
-   void process(const void* value));
+   void process(void* value));
 
 #undef T
 
