@@ -147,4 +147,16 @@ void Table_free(T *table) {
 	FREE(*table);
 }
 
+void Table_foreach(T table,
+   void process(const void* value))
+{
+	int i, j = 0;
+	struct binding *p;
+	assert(table);
+	for (i = 0; i < table->size; i++)
+		for (p = table->buckets[i]; p; p = p->link) {
+         process(p->value);
+		}
+}
+
 #undef T
