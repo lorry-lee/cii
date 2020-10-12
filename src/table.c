@@ -148,7 +148,7 @@ void Table_free(T *table) {
 }
 
 void Table_foreach(T table,
-   void process(const void* value))
+   void process(void* value))
 {
 	int i, j = 0;
 	struct binding *p;
